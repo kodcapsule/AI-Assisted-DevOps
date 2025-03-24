@@ -5,9 +5,10 @@ In a nutshell prompt engineering can be described as the technique of crafting n
 
 ## Prompt Engineering workflow. 
 ![Prompt Engineering workflow](./images/arce.gif)
-To craft a good prompt , above is the workflow one can use as a guide:
 
-1. Define your Objective: You should clearly identify what you want to achieve.
+
+To craft a good prompt , above is the workflow one can use as a guide:
+1. Define your Objective: You should clearly identify what you want to achieve.  
 2. Gather Context: Collect some relevant information about your environment, requirements, and constraints that will help in crafting a good prompt. 
 3. Draft Initial Prompt: Create your first version of the prompt
 4. Execute Prompt: Submit/Execute your  prompt to the AI system
@@ -15,11 +16,11 @@ To craft a good prompt , above is the workflow one can use as a guide:
 
 ## why Prompt Engineering important to DevOps Engineers?
 Prompt enginerring can help DevOps engineers some 
-✅ Generate optimized CI/CD scripts (Jenkins, GitHub Actions, GitLab CI).
-✅ Automate Kubernetes, Terraform, and Ansible configurations.
-✅ Assist in troubleshooting and debugging.
-✅ Generate custom Bash, Python, or YAML scripts.
-✅ Improve incident response and root cause analysis.
+- ✅. Generate optimized CI/CD scripts (Jenkins, GitHub Actions, GitLab CI).
+- ✅. Automate Kubernetes, Terraform, and Ansible configurations.
+- ✅. Assist in troubleshooting and debugging.
+- ✅. Generate custom Bash, Python, or YAML scripts.
+- ✅. Improve incident response and root cause analysis.
 
 ## Prompt Engineering Techniques
 
@@ -33,7 +34,6 @@ Example:
 **Output**
 ```bash
 #!/bin/bash
-
 # Configuration
 LOG_DIR="/var/log"  # Directory containing log files
 BACKUP_DIR="/backup/logs"  # Backup storage location
@@ -97,20 +97,19 @@ Example:
 
 ## Use Cases for DevOps Prompt Engineering
 Here are some use cases that for AI in DevOps
-
-✅ 1. Generating IaC (Infrastructure as Code)
-✅ 2. CI/CD Pipeline Automation and Optimization
-✅ 3. Technical Documentation
-✅ 4. Generate custom Bash, Python, or YAML scripts
-✅ 5. Log Analysis & Incident Response
+- ✅ 1. Generating IaC (Infrastructure as Code)
+- ✅ 2. CI/CD Pipeline Automation and Optimization
+- ✅ 3. Technical Documentation
+- ✅ 4. Generate custom Bash, Python, or YAML scripts
+- ✅ 5. Log Analysis & Incident Response
 
 
 ## Best Practices for Prompt Engineering
-1️⃣ Be clear and specific – The more specific the prompt, the better the output.
-2️⃣ Use context – Provide background information or examples when needed.
-3️⃣ Define the Output Format- Always specify the format you need
-4️⃣Iterate and refine – If the output isn’t ideal, adjust the prompt.
-5️⃣ Use CoT for complex tasks – Step-by-step reasoning improves accuracy. 
+- 1️⃣. Be clear and specific – The more specific the prompt, the better the output.
+- 2️⃣. Use context – Provide background information or examples when needed.
+- 3️⃣. Define the Output Format- Always specify the format you need
+- 4️⃣.Iterate and refine – If the output isn’t ideal, adjust the prompt.
+- 5️⃣.Use CoT for complex tasks – Step-by-step reasoning improves accuracy. 
 
 
 ##  Conclusion
