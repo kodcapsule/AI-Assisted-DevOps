@@ -1,18 +1,26 @@
-# AI Assisted DevOps: Day 3, Prompt Enginering
+# AI Assisted DevOps: Day 2 , Prompt Enginering
 
 ## What is Prompt Engineering?
-In a nutshell prompt engineering can be described as the technique of crafting natural language text to guide Generative AI to generate a desired output. Gen-AI tries to mimic humans, it still requires very detailed instructions to produce high-quality and desired outputs. Prompt Engineering is an essential skill that everyone should have whe it come to Generative AI. The  quality of your prompt (Input) to a Gen-AI determines your quality of your desired output. 
+In a nutshell, Prompt Engineering (PE) can be described as the technique of crafting natural language text to guide Generative AI to generate a desired output. Gen-AI tries to mimic humans, but it still requires very detailed instructions to produce high-quality and desired outputs. Prompt Engineering is an essential skill that everyone should have when it comes to Generative AI. The  quality of your prompt (Input) to a Gen-AI determines your quality of your desired output. 
 
 ## Prompt Engineering workflow. 
 ![Prompt Engineering workflow](./images/arce.gif)
 
 
 To craft a good prompt , above is the workflow one can use as a guide:
-1. Define your Objective: You should clearly identify what you want to achieve.  
-2. Gather Context: Collect some relevant information about your environment, requirements, and constraints that will help in crafting a good prompt. 
-3. Draft Initial Prompt: Create your first version of the prompt
-4. Execute Prompt: Submit/Execute your  prompt to the AI system
-5. Evaluate Output: Assess whether the result meets your needs and can accomplish your objective.
+**1. Define your Objective:** You should clearly identify what you want to achieve with Gen-AI. A well define objective or goal will help you to craft a good prompt.   
+**2. Gather Context:** Collect some relevant information about your environment, requirements, and constraints that will help in crafting a good prompt. 
+**3. Draft Initial Prompt:** Create your first version of the prompt
+**4. Execute Prompt:** Submit/Execute your  prompt to the Gen-AI system
+**5. Evaluate Output:** Assess whether the result meets your needs and can accomplish your objective. If the output is satisfactory, implement the solution ,document the prompt and build a prompt library. 
+For unsatisfactory outputs identify the problem which can be due to:
+   - 1 Lack of Context (Add Relevant Details)
+   - 2 Wrong Format (Specify Output Format)
+   - 3 Inaccurate Results (Add Constraints/Examples)
+   - 4 Too General (Add more  Specificity)
+update your prompt and execute again. 
+
+
 
 ## why Prompt Engineering important to DevOps Engineers?
 Prompt enginerring can help DevOps engineers some 
