@@ -1,4 +1,6 @@
-# AI Assisted DevOps: Day 2 , Prompt Enginering
+# AI Assisted DevOps: Day 2 , Prompt Engineering
+
+![AI Assisted DevOps ](./images/AI%20Assisted%20DevOps.png)
 
 ## What is Prompt Engineering?
 In a nutshell, Prompt Engineering (PE) can be described as the technique of crafting natural language text to guide Generative AI to generate a desired output. Gen-AI tries to mimic humans, but it still requires very detailed instructions to produce high-quality and desired outputs. Prompt Engineering is an essential skill that everyone should have when it comes to Generative AI. The  quality of your prompt (Input) to a Gen-AI determines your quality of your desired output. 
