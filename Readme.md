@@ -1,12 +1,30 @@
 # AI Assisted DevOps
-[AI Assisted DevOps](./images/AI%20Assisted%20DevOps.png)
+![AI Assisted DevOps](./images/AI%20Assisted%20DevOps.png)
 
 The landscape of AI is gaining traction in every sector due to its benefits of making our day-to-day activities  more efficient. AI has come to stay either you embrase it or you are left behind. In the world of DevOps,  AI is a game changer for DevOps. The 10 Day AI-assisted DevOps course organized by Abhishek is an amazing course for  every DevOps/Cloud Engineers.
 
 
 ## Day 1: Introduction to AI for DevOps
+ **Topics**
+
+  - 🎯Why AI is the the game change for DevOps
+  - 🤖 Traditional AI Vrs Generative AI 📊
+  - 🧠 What are Large Language Models (LLMs)?
+  - 🤖🛠️ AI landscape (AI Tools that that a DevOps Engineer should Know )
+
+### 🛠️ Hands-on/Project
+Create a GitHub repository that contains a bash script. when executed the bash script confirms the health of a virtual machine by looking at the parameters such as cpu, disk space, memory e.t.c.,. Please note that the bash script should also support a command line argument named "explain", when passed, "explain" provides the detailed summary of the health status.
+
 
 ## Day 2: Prompt Engineering Masterclass
+
+**Topics**
+- 🤖 What is Prompt Engineering?
+- 🔄 Prompt Engineering workflow. 
+- 🧰 why Prompt Engineering is important to DevOps Engineers?
+- 🛠️ Prompt Engineering Techniques
+- 🚀 Use Cases for DevOps Prompt Engineering
+- ✅ Best Practices for Prompt Engineering
 
 ## Day 3: Running LLMs Locally & Making API Calls
 
