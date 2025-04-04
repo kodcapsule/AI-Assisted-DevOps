@@ -24,8 +24,8 @@ update your prompt and execute again.
 
 
 
-## why Prompt Engineering important to DevOps Engineers?
-Prompt enginerring can help DevOps engineers some 
+## why Prompt Engineering is important to DevOps Engineers?
+Prompt engineering can help DevOps engineers some 
 - ✅. Generate optimized CI/CD scripts (Jenkins, GitHub Actions, GitLab CI).
 - ✅. Automate Kubernetes, Terraform, and Ansible configurations.
 - ✅. Assist in troubleshooting and debugging.
