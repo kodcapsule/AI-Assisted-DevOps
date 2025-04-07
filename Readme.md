@@ -26,7 +26,7 @@ Create a GitHub repository that contains a bash script. when executed the bash s
 - 🚀 Use Cases for DevOps Prompt Engineering
 - ✅ Best Practices for Prompt Engineering
 
-## Day 3: Running LLMs Locally & Making API Calls
+## Day 3: Gen-AI Project For DevOps Engineers
 
 ## Day 4: AI-Powered Shell Scripting & CLI Automation
 
