@@ -12,9 +12,9 @@ The python script takes as input a programming language  (e.g., Python, Node.js,
 ![Dockerfile Generation Workflow](image-1.png)
 
 ## Installing Ollama locally
-- 1.To install Ollama locally visit the official page , [Ollama Download Page](https://ollama.com/download) and dwonload Ollama for your prefered OS 
+**Step 1** To install Ollama locally visit the official page , [Ollama Download Page](https://ollama.com/download) and dwonload Ollama for your prefered OS 
 ![Download Ollama ](./images/download-ollama.png)
-- 2. Install Ollama for your prefered OS
+**Step 2** Install Ollama for your prefered OS
 **Linux**
 ```bash
     curl -fsSL https://ollama.com/install.sh | sh
@@ -24,18 +24,19 @@ The python script takes as input a programming language  (e.g., Python, Node.js,
 [Download](https://ollama.com/download/windows) and run the .exe and follow the steps to install Ollama
 
 **MacOs**
-[Download](https://ollama.com/download/mac) and run the .exe and follow the steps to install Ollama or use brew
+[Download](https://ollama.com/download/mac)  and follow the steps to install Ollama or you can use brew
 
 ```bash
     # For MacOS
 brew install ollama
 ```
 
-- 3. Start Ollama Service
+**Step 3** Start Ollama Service
 ```bash
     ollama serve
 ```
-- 4. Pull LLMS 
+**Step 4**Pull LLMS 
+
 ```bash
     ollama pull deepseek-coder-v2
 ```
@@ -52,11 +53,11 @@ brew install ollama
 | `ollama ps`              | Shows the currently running models.                                      |
 | `ollama stop <model>`    | Stops the specified running model.                                       |
 | `ollama rm <model>`      | Removes the specified model from your system.                            |
-|--------------------------|--------------------------------------------------------------------------| 
+ 
 
 ## 🚀 Project Setup/Configuation
 
-- 1. Create Virtual Environment
+**Step 1** Create Virtual Environment
 
 ```bash
 python3 -m venv venv
@@ -66,14 +67,14 @@ source venv/bin/activate  # On Linux/MacOS
 ```
 
 
-- 2. Install Dependencies
+**Step 2** Install Dependencies
 
 ```bash
 pip3 install -r requirements.txt
 ```
 
 
-- 3. Run the Application
+**Step 3** Run the Application
 ```bash
 # macOS/Linux
 python3 generate_dockerfile.py
