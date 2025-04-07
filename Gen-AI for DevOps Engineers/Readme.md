@@ -1,5 +1,7 @@
 # AI Assisted DevOps: Day 2 Gen-AI for DevOps Engineers
 
+![Automating Dockerfile creation](./images/Gen-AI.png)
+
 ## Project: Automating Dockerfile creation Using  Gen-AI Model
 
 Creating Dockerfiles is a routine task that is done by Cloud and DevOps engineers. AI shines in the area. This project automates the creation/generation of Dockerfiles for various programming language by using a python script together with  Gen-AI model.  
@@ -11,7 +13,7 @@ The python script takes as input a programming language  (e.g., Python, Node.js,
 
 ## Installing Ollama locally
 - 1.To install Ollama locally visit the official page , [Ollama Download Page](https://ollama.com/download) and dwonload Ollama for your prefered OS 
-![alt text](image.png)
+![Download Ollama ](./images/download-ollama.png)
 - 2. Install Ollama for your prefered OS
 **Linux**
 ```bash
