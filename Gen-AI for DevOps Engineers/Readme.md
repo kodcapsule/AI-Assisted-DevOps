@@ -1,4 +1,4 @@
-# AI Assisted DevOps: Day 2 Gen-AI for DevOps Engineers
+# AI Assisted DevOps: Day 3 Gen-AI for DevOps Engineers
 
 ![Automating Dockerfile creation](./images/Gen-AI.png)
 
@@ -42,6 +42,12 @@ brew install ollama
 ```
 ## Some  Ollama CLI Commands for your daily use
 
+Usage:
+  ollama [flags]
+  ollama [command]
+
+Available Commands:
+
 | Command                  | Description                                                              |
 |--------------------------|--------------------------------------------------------------------------|
 | `ollama serve`           | Starts Ollama on your local system.                                      |
@@ -53,7 +59,14 @@ brew install ollama
 | `ollama ps`              | Shows the currently running models.                                      |
 | `ollama stop <model>`    | Stops the specified running model.                                       |
 | `ollama rm <model>`      | Removes the specified model from your system.                            |
- 
+| `ollama help `           | Help about any command                                                   | 
+| `ollama  cp  <model>`    | Copy a model                                                             | 
+| `ollama push <model>`    | Copy a model   Push a model to a registry                                |  
+
+
+Flags:
+  -h, --help      help for ollama
+  -v, --version   Show version information
 
 ## 🚀 Project Setup/Configuation
 
