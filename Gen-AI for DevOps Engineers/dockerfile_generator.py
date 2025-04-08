@@ -31,8 +31,7 @@ def validate_language(language):
         print (f"'{input_language}' is a common programming language.")
         return input_language
     else:
-        print(colored(f"WARNING: '{input_language}' is not recognized as a common programming language. Input may be incorrect.", 'yellow',attrs=["bold"]))  
-               
+        print(colored(f"WARNING: '{input_language}' is not recognized as a common programming language. Input may be incorrect.", 'yellow',attrs=["bold"]))                
         sys.exit(1)
    
 
