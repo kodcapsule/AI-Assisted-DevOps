@@ -1,5 +1,5 @@
 # AI Assisted DevOps
-![AI Assisted DevOps](./images/AI%20Assisted%20DevOps.png)
+![AI Assisted DevOps](./images/AI%20Assisted%20DevOps_.png)
 
 The landscape of AI is gaining traction in every sector due to its benefits of making our day-to-day activities  more efficient. AI has come to stay either you embrase it or you are left behind. In the world of DevOps,  AI is a game changer for DevOps. The 10 Day AI-assisted DevOps course organized by Abhishek is an amazing course for  every DevOps/Cloud Engineers.
 
