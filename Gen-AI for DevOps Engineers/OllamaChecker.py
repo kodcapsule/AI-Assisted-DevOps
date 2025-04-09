@@ -1,6 +1,7 @@
 import os
 import subprocess
 import platform
+from termcolor import colored
 
 class OllamaChecker:
     """A class to check if Ollama is installed and running on the system."""
@@ -27,19 +28,21 @@ class OllamaChecker:
                 
                 for path in paths_to_check:
                     if os.path.exists(path):
+                        message = f"Your OS is {platform.system()} {platform.release()} running Python {platform.python_version()}\n"
                         self.installation_status = True
-                        self.installation_details = f"Ollama is  installed at: {path}"
+                        self.installation_details = colored(f"Ollama is  installed at: {path} \n{message}",'cyan', attrs=["bold"])
                         return self.installation_status, self.installation_details
                         
                 # Try to run ollama command
-                result = subprocess.run(['where', 'ollama'], capture_output=True, text=True)
+                result = subprocess.run(['where', 'ollama'], capture_output=True, text=True) 
                 if result.returncode == 0:
                     self.installation_status = True
-                    self.installation_details = f"Ollama is installed at: {result.stdout.strip()}"
+                    self.installation_details = f"Ollama appears to be installed at 101: {result.stdout.strip()}"
                     return self.installation_status, self.installation_details
                 
-                self.installation_status = False
-                self.installation_details = "Ollama does not appear to be installed."
+                else:
+                    self.installation_status = False
+                    self.installation_details = "Ollama is not installed."
                 
             elif self.system in ["Linux", "Darwin"]:  # Linux or macOS
                 # Check if ollama is in PATH
