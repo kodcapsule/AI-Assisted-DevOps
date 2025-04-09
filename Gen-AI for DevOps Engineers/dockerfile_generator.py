@@ -1,7 +1,7 @@
 import ollama
 from termcolor import colored
 import sys, os, platform, subprocess
-import re
+import OllamaChecker
 
 PROMPT = """
 ONLY Generate an ideal Dockerfile for {language} with best practices. Do not provide any description
@@ -20,6 +20,8 @@ COMMON_LANGUAGES = [
     'scala', 'elixir', 'perl', 'r', 'dart', 'flutter', 'haskell', 'clojure'
 ]
 
+
+ollama_checker = OllamaChecker.OllamaChecker()
 
 def check_ollama_installed():
  
@@ -113,6 +115,10 @@ def main():
         # Get language input with validation
         language = input("Enter the programming language: ").strip()
         valid_language = validate_language(language)
+
+        is_installed, installation_details = ollama_checker.check_installed()
+        print(installation_details)
+     
             
         # check if Ollama is installed locally and running
 
@@ -176,6 +182,5 @@ def greeting():
 
 if __name__ == '__main__':
 
-    greeting()
-    
-    main()
+    greeting()    
+    main() 
