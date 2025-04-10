@@ -1,5 +1,8 @@
 # AI Assisted Shell Scripting | Creating AWS Resources using Bash scripts
  
+![Cover Page](./images/image.png)
+
+
 This project leverages AI to assist in the creation and execution of shell scripts, enhancing productivity and reducing errors.
 
 ## Features

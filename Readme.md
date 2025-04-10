@@ -26,7 +26,13 @@ Create a GitHub repository that contains a bash script. when executed the bash s
 - 🚀 Use Cases for DevOps Prompt Engineering
 - ✅ Best Practices for Prompt Engineering
 
-## Day 3: Gen-AI Project For DevOps Engineers
+## Day 3 Project: Automating Dockerfile Creation Using Gen-AI Model
+
+**Topics**
+- ⚙️ Automated Dockerfile Generation Workflow
+- 💻 Installing Ollama Locally
+- 🧰 Some Ollama CLI Commands for Your Daily Use
+- 🛠️ Project Setup/Configuration
 
 ## Day 4: AI-Powered Shell Scripting & CLI Automation
 
