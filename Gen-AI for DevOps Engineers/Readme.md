@@ -3,8 +3,7 @@
 ![Automating Dockerfile creation](./images/Gen-AI.png)
 
 ## Project: Automating Dockerfile creation Using  Gen-AI Model
-
-Creating Dockerfiles is a routine task that is done by Cloud and DevOps engineers. AI shines in the area. This project automates the creation/generation of Dockerfiles for various programming language by using a python script together with  Gen-AI model.  
+Creating Dockerfiles is a routine task that is done by Cloud and DevOps engineers. AI shines in this area. This project automates the creation/generation of Dockerfiles for various programming language by using a python script together with  Gen-AI model.  
 
 The python script takes as input a programming language  (e.g., Python, Node.js, Java) then Connects to the Ollama API running locally and generates an optimized Dockerfile with best practices for the specified programming language.  Returns the Dockerfile content with explanatory comments
 
