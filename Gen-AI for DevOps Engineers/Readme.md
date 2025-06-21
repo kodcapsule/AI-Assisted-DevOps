@@ -3,16 +3,22 @@
 ![Automating Dockerfile creation](./images/Gen-AI.png)
 
 ## Project: Automating Dockerfile creation Using  Gen-AI Model
-Creating Dockerfiles is a routine task that is done by Cloud and DevOps engineers. AI shines in this area. This project automates the creation/generation of Dockerfiles for various programming language by using a python script together with  Gen-AI model.  
+Creating Dockerfiles is a routine task that is done by Cloud and DevOps engineers. AI shines in this area. This project automates the creation/generation of Dockerfiles for various programming language by using a python script together with a  Gen-AI model.  
 
 The python script takes as input a programming language  (e.g., Python, Node.js, Java) then Connects to the Ollama API running locally and generates an optimized Dockerfile with best practices for the specified programming language.  Returns the Dockerfile content with explanatory comments
 
 ## Automated Dockerfile Generation Workflow
 ![Dockerfile Generation Workflow](image-1.png)
 
-## Installing Ollama locally
+## Prerequisites
+
+### 1. Install Python: 
+You should install python on your computer. to install python use the official [Download](https://www.python.org/downloads/) and install python for your prefered OS.
+
+### 2. Installing Ollama locally
 **Step 1** To install Ollama locally visit the official page , [Ollama Download Page](https://ollama.com/download) and dwonload Ollama for your prefered OS 
 ![Download Ollama ](./images/download-ollama.png)
+
 **Step 2** Install Ollama for your prefered OS
 **Linux**
 ```bash
@@ -39,7 +45,7 @@ brew install ollama
 ```bash
     ollama pull deepseek-coder-v2
 ```
-## Some  Ollama CLI Commands for your daily use
+### Some  Ollama CLI Commands for your daily use
 
 Usage:
   ollama [flags]

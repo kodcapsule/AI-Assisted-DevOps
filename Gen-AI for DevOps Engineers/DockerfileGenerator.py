@@ -4,7 +4,7 @@ import ollama
 class DockerfileGenerator:
     """A class to generate Dockerfiles for different programming languages using Ollama."""
     
-    def __init__(self, model='llama3.1:8b', language ='python'):
+    def __init__(self, model='llama3.1:8b', language ='python',prompt_template=None):
         """Initialize the DockerfileGenerator with a specified model.
         
         Args:
@@ -57,20 +57,20 @@ class DockerfileGenerator:
             
             # Call Ollama API to generate Dockerfile
             try:
-                print(f"Generating Dockerfile for {language}...")
-                                # response = ollama.chat(
-                #     model=self.model,
-                #     messages=[{'role': 'user', 'content': self.prompt_template.format(language=language)}]
-                # )
+                # print(f"Generating Dockerfile for {language}...")
+                response = ollama.chat(
+                    model=self.model,
+                    messages=[{'role': 'user', 'content': self.prompt_template.format(language=language)}]
+                )
                 
-                # # Extract content from response
-                # dockerfile_content = response['message']['content']
+                # Extract content from response
+                dockerfile_content = response['message']['content']
                 
-                # # Basic verification that we got a Dockerfile
-                # if not dockerfile_content or "FROM" not in dockerfile_content:
-                #     raise ValueError("Generated content does not appear to be a valid Dockerfile")
+                # Basic verification that we got a Dockerfile
+                if not dockerfile_content or "FROM" not in dockerfile_content:
+                    raise ValueError("Generated content does not appear to be a valid Dockerfile")
                 
-                # return dockerfile_content
+                return dockerfile_content
                 
             except ImportError:
                 print("Error: The ollama package is not installed. Install it with 'pip install ollama'")
@@ -102,7 +102,7 @@ class DockerfileGenerator:
             print(f"Error saving Dockerfile: {str(e)}")
             return False
     
-    def generate_and_save(self, language, filepath="Dockerfile"):
+    def generate_and_save(self, filepath="Dockerfile"):
         """Generate a Dockerfile for the specified language and save it to a file.
         
         Args:
@@ -113,7 +113,7 @@ class DockerfileGenerator:
             bool: True if the Dockerfile was generated and saved successfully, False otherwise.
         """
         try:
-            content = self.generate(language)
+            content = self.generate(self.language)
             return self.save_to_file(content, filepath)
         except Exception as e:
             print(f"Error generating and saving Dockerfile: {str(e)}")
