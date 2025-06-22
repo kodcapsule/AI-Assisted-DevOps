@@ -1,10 +1,24 @@
 import sys
 import ollama
+from OllamaChecker import OllamaChecker
+
+PROMPT = """
+        ONLY Generate an ideal Dockerfile for {language} with best practices. Do not provide any description
+        Include:
+        - Base image
+        - Installing dependencies
+        - Setting working directory
+        - Adding source code
+        - Running the application
+        - Exposing necessary ports
+        - Using multi-stage builds if applicable
+        - Ensure the Dockerfile is production-ready and follows Docker best practices
+        """
 
 class DockerfileGenerator:
     """A class to generate Dockerfiles for different programming languages using Ollama."""
     
-    def __init__(self, model='llama3.1:8b', language ='python',prompt_template=None):
+    def __init__(self, model='llama3.1:8b', language ='python',prompt_template=PROMPT ):
         """Initialize the DockerfileGenerator with a specified model.
         
         Args:
@@ -14,18 +28,7 @@ class DockerfileGenerator:
         """
         self.language = language
         self.model = model
-        self.prompt_template = """Create a Dockerfile for a python application.
-                                 Include best practices such as:
-                                - Using an appropriate base image
-                                - Setting up the necessary environment
-                                - Installing dependencies
-                                - Running the application
-                                - Exposing the necessary ports
-                                - Using multi-stage builds if applicable
-
-                            The Dockerfile should be production-ready and follow Docker best practices.
-
-                            """
+        self.prompt_template = prompt_template
     
     def set_prompt_template(self, template):
         """Set a custom prompt template for Dockerfile generation.
@@ -52,9 +55,29 @@ class DockerfileGenerator:
             ValueError: If the generated content is not a valid Dockerfile.
             Exception: For any other errors.
         """
+        ollama_checker = OllamaChecker()
         try:
+
+            # Check if Ollama is installed and running
+            if not ollama_checker.check_installed():
+                print("Ollama is not installed. Please install it first.")
+                sys.exit(1)
+            elif not ollama_checker.check_process_running():
+                print("Ollama process is not running. Please start it first.")
+                sys.exit(1)
+            elif not ollama_checker.check_service_running():
+                print("Ollama service is not running. Please ensure it is started.")
+                sys.exit(1)
+            else:
+                print("Ollama is installed and running. Proceeding with Dockerfile generation...")
+            
+         
+         
             
             
+
+
+
             # Call Ollama API to generate Dockerfile
             try:
                 # print(f"Generating Dockerfile for {language}...")

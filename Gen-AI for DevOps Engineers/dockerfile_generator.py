@@ -8,10 +8,11 @@ from DockerfileGenerator import DockerfileGenerator
 
 
 SUPPORTED_LANGUAGES = [
-    "python", "javascript", "java", "csharp", "c++", "ruby", "go","golang"
+    "python", "javascript", "java", "csharp", "c++", "ruby", "go","golang",
     "typescript","c#"
 ]
 
+MODEL_TYPES = ['local', 'online']
 
 
 
@@ -26,49 +27,72 @@ SUPPORTED_LANGUAGES = [
     default='Dockerfile',
     help='Output file path (defaults to the current directory Dockerfile)'   
 )
-def generate_dockerfile(language, output):
+@click.option('--model-type', '-t',
+    type=click.Choice(MODEL_TYPES, case_sensitive=False),
+    prompt='Choose model type',
+    default='local',
+    help='Select whether to use a local or online model')
+def generate_dockerfile(language, output, model_type):
     """
     Generates a Dockerfile for the specified programming language using Ollama.    
     Args:
         language (str): The programming language for which to generate the Dockerfile.    
     Returns:
         str: The generated Dockerfile content.
-    """
-    PROMPT = """
-        ONLY Generate an ideal Dockerfile for {language} with best practices. Do not provide any description
-        Include:
-        - Base image
-        - Installing dependencies
-        - Setting working directory
-        - Adding source code
-        - Running the application
-        - Exposing necessary ports
-        - Using multi-stage builds if applicable
-        - Ensure the Dockerfile is production-ready and follows Docker best practices
-        """
-    prompt = PROMPT.format(language=language.lower())
-    try:
-        print(Fore.GREEN + "All Configuration files are ok ✅:")
-        print(f"   📝 Language: {language.title()}")
-        print(f"   📁 Output: {output}")
-        print()
+    """  
+ 
+    print()
+    print(Fore.GREEN + "All Configuration files are ok ✅:")
+    print(f"   📝 Language: {language.title()}")
+    print(f"   🤖 Model Type: {model_type.title()}")
+    print(f"   📁 Output: {output}")
+    print()
        
-        print(Fore.YELLOW + f"Generating Dockerfile for {language}...")
-        dockerfile_gen = DockerfileGenerator(language=language,prompt_template=prompt)
-        dockerfile_gen.generate_and_save()
-        print(prompt)
+
+    if model_type == 'local':
+        try:
+            dockerfile_gen = DockerfileGenerator(language=language)
+            dockerfile_gen.generate_and_save()
+        except ImportError:
+            print(Fore.RED + "Ollama package is not installed. Please install it using 'pip install ollama'.")
+            sys.exit(1)
+        except Exception as e:
+                print(f"Error generating Dockerfile: {str(e)}")
+                sys.exit(1)
+
+    elif model_type == 'online':
+        try:
+            print(Fore.YELLOW + "Using online model. Ensure you have an internet connection.")
+        except ImportError:
+            print(Fore.RED + "Ollama package is not installed. Please install it using 'pip install ollama'.")
+            sys.exit(1)
+        except Exception as e:
+                print(f"Error generating Dockerfile: {str(e)}")
+                sys.exit(1)
+    else:
+        print(Fore.RED + "Invalid model type selected. Please choose 'local' or 'online'.")
+        sys.exit(1)
+
+
+
+    # try:
+       
+    #     # print(Fore.YELLOW + f"Generating Dockerfile for {language}...")
+    #     dockerfile_gen = DockerfileGenerator(language=language,prompt_template=prompt)
+    #     dockerfile_gen.generate_and_save()
+    #     print(prompt)
         
     
-    except Exception as e:
-        print(f"Error generating Dockerfile: {str(e)}")
-        sys.exit(1)
+    # except Exception as e:
+    #     print(f"Error generating Dockerfile: {str(e)}")
+    #     sys.exit(1)
 
 def main():
     greeting()  
     try:
        
         docker_file = generate_dockerfile()  # Generate the Dockerfile
-        print(Fore.GREEN + f"\nGenerating Dockerfile for: {docker_file}\n")         
+        print(Fore.GREEN + f"\nGenerating Dockerfile for: {docker_file}\n")       
         
  
     except KeyboardInterrupt:
