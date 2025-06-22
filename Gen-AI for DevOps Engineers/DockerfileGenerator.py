@@ -69,39 +69,18 @@ class DockerfileGenerator:
                 print("Ollama service is not running. Please ensure it is started.")
                 sys.exit(1)
             else:
-                print("Ollama is installed and running. Proceeding with Dockerfile generation...")
-            
-         
-         
-            
-            
-
-
-
-            # Call Ollama API to generate Dockerfile
-            try:
-                # print(f"Generating Dockerfile for {language}...")
+                # print("Ollama is installed and running. Proceeding with Dockerfile generation...")
                 response = ollama.chat(
                     model=self.model,
                     messages=[{'role': 'user', 'content': self.prompt_template.format(language=language)}]
                 )
-                
-                # Extract content from response
+
                 dockerfile_content = response['message']['content']
-                
-                # Basic verification that we got a Dockerfile
+
                 if not dockerfile_content or "FROM" not in dockerfile_content:
-                    raise ValueError("Generated content does not appear to be a valid Dockerfile")
-                
-                return dockerfile_content
-                
-            except ImportError:
-                print("Error: The ollama package is not installed. Install it with 'pip install ollama'")
-                sys.exit(1)
-            except ConnectionError:
-                print("Error: Could not connect to Ollama service. Make sure it's running.")
-                sys.exit(1)
-                
+                    raise ValueError("Generated content does not appear to be a valid Dockerfile")                
+                return dockerfile_content              
+         
         except Exception as e:
             print(f"Error generating Dockerfile: {str(e)}")
             sys.exit(1)

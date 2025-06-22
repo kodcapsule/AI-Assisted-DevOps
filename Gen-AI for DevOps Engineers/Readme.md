@@ -40,7 +40,7 @@ brew install ollama
 ```bash
     ollama serve
 ```
-**Step 4**Pull LLMS 
+**Step 4** Pull LLMS 
 
 ```bash
     ollama pull deepseek-coder-v2

@@ -5,6 +5,7 @@ from pyfiglet import figlet_format
 import sys
 
 from DockerfileGenerator import DockerfileGenerator
+from utils import progress_bar 
 
 
 SUPPORTED_LANGUAGES = [
@@ -51,7 +52,9 @@ def generate_dockerfile(language, output, model_type):
 
     if model_type == 'local':
         try:
+            
             dockerfile_gen = DockerfileGenerator(language=language)
+            progress_bar.custom_progress_bar() 
             dockerfile_gen.generate_and_save()
         except ImportError:
             print(Fore.RED + "Ollama package is not installed. Please install it using 'pip install ollama'.")
@@ -63,6 +66,7 @@ def generate_dockerfile(language, output, model_type):
     elif model_type == 'online':
         try:
             print(Fore.YELLOW + "Using online model. Ensure you have an internet connection.")
+            progress_bar.styled_progress_bar()
         except ImportError:
             print(Fore.RED + "Ollama package is not installed. Please install it using 'pip install ollama'.")
             sys.exit(1)
@@ -72,21 +76,6 @@ def generate_dockerfile(language, output, model_type):
     else:
         print(Fore.RED + "Invalid model type selected. Please choose 'local' or 'online'.")
         sys.exit(1)
-
-
-
-    # try:
-       
-    #     # print(Fore.YELLOW + f"Generating Dockerfile for {language}...")
-    #     dockerfile_gen = DockerfileGenerator(language=language,prompt_template=prompt)
-    #     dockerfile_gen.generate_and_save()
-    #     print(prompt)
-        
-    
-    # except Exception as e:
-    #     print(f"Error generating Dockerfile: {str(e)}")
-    #     sys.exit(1)
-
 def main():
     greeting()  
     try:
@@ -122,3 +111,4 @@ def greeting():
 if __name__ == '__main__':
       
     main() 
+     # Show custom progress bar after main function completes
