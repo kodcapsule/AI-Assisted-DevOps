@@ -104,3 +104,41 @@ python generate_dockerfile.py
 py generate_dockerfile.py
 
 ```
+## 🏆 ERRORS and Troubleshooting
+
+### 429 You exceeded your current quota, please check your plan and billing details
+**ERROR**
+```bash
+ Error generating Dockerfile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+violations {
+}
+violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 50
+}
+]
+```
+**Solution**
+```bash
+Wait for the retry delay (50 seconds as indicated in the error)
+Check your API quota and billing details in your Google Cloud Console or AI Studio account
+Consider upgrading your plan if you need higher rate limits
+```
+
+### Error generating Dockerfile: model "llama3.1:8b" not found, try pulling it first (status code: 404)
+
+```bash
+  Error generating Dockerfile: model "llama3.1:8b" not found, try pulling it first (status code: 404)
+```
+```bash
+Install Ollama from https://ollama.ai
+Then run the pull command above
+  OR
+Use a different model that's already installed:
+```

@@ -5,7 +5,7 @@ from pyfiglet import figlet_format
 import sys
 
 from DockerfileGenerator import DockerfileGenerator
-from utils import progress_bar 
+from utils import progress_bar,hosted_llm 
 
 
 SUPPORTED_LANGUAGES = [
@@ -54,7 +54,8 @@ def generate_dockerfile(language, output, model_type):
         try:
             
             dockerfile_gen = DockerfileGenerator(language=language)
-            progress_bar.custom_progress_bar() 
+            print(Fore.YELLOW + "Using Local model")
+            progress_bar.styled_progress_bar()
             dockerfile_gen.generate_and_save()
         except ImportError:
             print(Fore.RED + "Ollama package is not installed. Please install it using 'pip install ollama'.")
@@ -67,6 +68,8 @@ def generate_dockerfile(language, output, model_type):
         try:
             print(Fore.YELLOW + "Using online model. Ensure you have an internet connection.")
             progress_bar.styled_progress_bar()
+            hosted_llm.generate_dockerfile(language=language, model_type='gemini-1.5-pro')
+            print(Fore.GREEN + "Dockerfile generated successfully using online model!")
         except ImportError:
             print(Fore.RED + "Ollama package is not installed. Please install it using 'pip install ollama'.")
             sys.exit(1)
