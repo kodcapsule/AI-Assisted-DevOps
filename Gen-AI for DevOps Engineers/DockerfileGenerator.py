@@ -17,8 +17,8 @@ PROMPT = """
 
 class DockerfileGenerator:
     """A class to generate Dockerfiles for different programming languages using Ollama."""
-    
-    def __init__(self, model='llama3.1:8b', language ='python',prompt_template=PROMPT ):
+
+    def __init__(self, model='gemma3:latest', language ='python',prompt_template=PROMPT ):
         """Initialize the DockerfileGenerator with a specified model.
         
         Args:
